@@ -5,7 +5,7 @@
 ## 브라우저
 
 ```html
-<script src="{path_to_js}/index.js"></script>
+<script src="{path_to_js}/number-kor.js"></script>
 <script>
   alert( Number.parseKor('천사') ); // 1004
 </script>

@@ -63,6 +63,7 @@
           if (str.startsWith(byten[i])) {
             tmp += i | 0;
             str = str.substr(byten[i].length);
+            continue loop1;
           }
         }
         let m = null;

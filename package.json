@@ -1,8 +1,8 @@
 {
   "name": "number-kor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse numbers in korean to integer",
-  "main": "index.js",
+  "main": "number-kor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
