@@ -1,0 +1,28 @@
+{
+  "name": "number-kor",
+  "version": "1.0.0",
+  "description": "Parse numbers in korean to integer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazygyu/kor_number.git"
+  },
+  "keywords": [
+    "number",
+    "korean",
+    "ko",
+    "parse"
+  ],
+  "author": {
+    "name": "lazygyu",
+    "email": "lazygyu@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lazygyu/kor_number/issues"
+  },
+  "homepage": "https://github.com/lazygyu/kor_number#readme"
+}
