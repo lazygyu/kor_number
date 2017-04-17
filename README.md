@@ -1,4 +1,4 @@
-# kor_number
+# number-kor
 한글 숫자를 정수로 변환합니다.
 
 # 사용법
