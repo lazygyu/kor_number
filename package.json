@@ -1,6 +1,6 @@
 {
   "name": "number-kor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parse numbers in korean to integer",
   "main": "number-kor.js",
   "scripts": {

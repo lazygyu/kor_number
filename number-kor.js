@@ -36,26 +36,39 @@
     parseOrdinal: (_str) => {
       let sum = 0, tmpSum = 0, tmp = 0;
       let str = _str.replace(/^\s+|\s+$/g, '');
+      let lastBig = 10000000000000000000, lastSmall = 10000;
+      let canDigit = true;
       if (str.length === 0) return null;
       loop1:
       while (str.length > 0) {
         for (let i in big_digit_numbers) {
           if (str.startsWith(big_digit_numbers[i])) {
+            if (lastBig <= i | 0) {
+              throw new Error("형식이 맞지 않는 수입니다.");
+            }
             if (tmp != 0) tmpSum += tmp;
             if (tmpSum === 0) tmpSum = 1;
             tmpSum *= (i | 0);
             sum += tmpSum;
             tmpSum = 0; tmp = 0;
             str = str.substr(big_digit_numbers[i].length);
+            lastBig = i | 0;
+            lastSmall = 10000;
+            canDigit = true;
             continue loop1;
           }
         }
         for (let i in small_digit_numbers) {
           if (str.startsWith(small_digit_numbers[i])) {
+            if (lastSmall <= i | 0) {
+              throw new Error("형식이 맞지 않는 수입니다");
+            }
             if (tmp === 0) tmp = 1;
             tmpSum += tmp * (i | 0);
             tmp = 0;
             str = str.substr(small_digit_numbers[i].length);
+            lastSmall = i | 0;
+            canDigit = true;
             continue loop1;
           }
         }
@@ -63,14 +76,19 @@
           if (str.startsWith(byten[i])) {
             tmp += i | 0;
             str = str.substr(byten[i].length);
+            canDigit = true;
             continue loop1;
           }
         }
         let m = null;
         for (let i in cardinal_numbers) {
           if (m = str.match(cardinal_numbers[i])) {
+            if (!canDigit) {
+              throw Error("형식이 맞지 않는 수입니다.");
+            }
             tmp += i | 0;
             str = str.substr(m[0].length);
+            canDigit = false;
             continue loop1;
           }
         }
